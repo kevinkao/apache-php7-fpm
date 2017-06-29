@@ -38,6 +38,8 @@ RUN a2enconf php7.0-fpm; \
     a2enmod actions fastcgi alias proxy proxy_fcgi rewrite; \
     service php7.0-fpm start
 
+RUN chown -R www-data:www-data /var/www/html
+
 EXPOSE 80
 
 CMD ["/usr/bin/supervisord"]
