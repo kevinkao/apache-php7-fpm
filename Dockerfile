@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
         php7.0-mbstring \
         php7.0-mysql \
         php7.0-xml \
+        php7.0-gd \
         php-redis \
         php-mongodb \
         unzip \
@@ -38,7 +39,7 @@ RUN a2enconf php7.0-fpm; \
     a2enmod actions fastcgi alias proxy proxy_fcgi rewrite; \
     service php7.0-fpm start
 
-RUN chown -R www-data:www-data /var/www/html
+# RUN chown -R www-data:www-data /var/www/html
 
 EXPOSE 80
 
